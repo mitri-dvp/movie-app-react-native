@@ -18,7 +18,7 @@ interface Movie {
   imdbRating: string;
   imdbVotes: string;
   imdbID: string;
-  Type: string;
+  Type: 'movie' | 'series' | 'episode';
   DVD: string;
   BoxOffice: string;
   Production: string;
@@ -35,6 +35,6 @@ interface MovieSearchResult {
   Title: string;
   Year: string;
   imdbID: string;
-  Type: string;
+  Type: 'movie' | 'series' | 'episode';
   Poster: string;
 }

@@ -38,6 +38,34 @@ const Layout = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="series/[id]"
+        options={{
+          title: '',
+          headerLeft: () => (
+            <Ionicons
+              name="arrow-back"
+              size={24}
+              color={theme.color12.val}
+              onPress={() => router.back()}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="episode/[id]"
+        options={{
+          title: '',
+          headerLeft: () => (
+            <Ionicons
+              name="arrow-back"
+              size={24}
+              color={theme.color12.val}
+              onPress={() => router.back()}
+            />
+          ),
+        }}
+      />
     </Stack>
   );
 };

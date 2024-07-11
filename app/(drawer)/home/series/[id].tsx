@@ -5,7 +5,7 @@ import { useLocalSearchParams } from 'expo-router';
 const Page = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
 
-  return <MovieDetails imdbID={id!} Type={'movie'} />;
+  return <MovieDetails imdbID={id!} Type={'series'} />;
 };
 
 export default Page;

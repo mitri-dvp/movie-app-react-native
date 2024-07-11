@@ -8,12 +8,7 @@ import { Image } from 'tamagui';
 const MovieCard = ({ movie }: { movie: Movie | MovieSearchResult }) => {
   // "movie" | "series"
   return (
-    <Card
-      key={movie.imdbID}
-      elevate
-      size="$4"
-      bordered
-      style={{ width: 300, height: 300, borderRadius: 10 }}>
+    <Card elevate size="$4" bordered style={{ width: 300, height: 400, borderRadius: 10 }}>
       <Card.Header padded>
         <H2>{movie.Title}</H2>
         <Paragraph theme="alt2">{movie.Year}</Paragraph>
@@ -31,7 +26,7 @@ const MovieCard = ({ movie }: { movie: Movie | MovieSearchResult }) => {
           style={{ borderRadius: 10 }}
           source={{
             width: 300,
-            height: 300,
+            height: 450,
             uri: movie.Poster,
           }}
         />

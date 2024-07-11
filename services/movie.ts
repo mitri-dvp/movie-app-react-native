@@ -14,11 +14,11 @@ export const getSearchResults = async (query: string): Promise<MovieSearchResult
   );
 
   const data = await response.json();
-  console.log({ data });
+
   return data.Search || [];
 };
 
-export const getMovieDetails = async (id: string): Promise<any> => {
+export const getMovieDetails = async (id: string): Promise<Movie> => {
   const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
   return await response.json();
 };
