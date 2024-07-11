@@ -1,13 +1,11 @@
 import { View, Text, ImageBackground } from 'react-native';
 import React, { useState } from 'react';
-import { Card, H2, Input, Paragraph, ScrollView, Spinner, useTheme, YStack } from 'tamagui';
-import { XStack } from 'tamagui';
-import { Button, Container, Main, Subtitle, Title } from '~/tamagui.config';
-import { Link } from 'expo-router';
+import { Input, ScrollView, Spinner, useTheme, YStack } from 'tamagui';
+import { Container, Subtitle, Title } from '~/tamagui.config';
 import { useQuery } from '@tanstack/react-query';
 import { getMovies, getSearchResults } from '~/services/movie';
-import { Image } from 'tamagui';
 import useDebounce from '~/utils/useDebounce';
+import MovieCard from '~/components/MovieCard';
 
 const Page = () => {
   const theme = useTheme();
@@ -88,35 +86,7 @@ const Page = () => {
                 </Text>
               ) : null}
               {data.map((movie) => (
-                <Card
-                  key={movie.imdbID}
-                  elevate
-                  size="$4"
-                  bordered
-                  style={{ width: 300, height: 300, borderRadius: 10 }}>
-                  <Card.Header padded>
-                    <H2>{movie.Title}</H2>
-                    <Paragraph theme="alt2">subtitle</Paragraph>
-                  </Card.Header>
-                  <Card.Footer padded>
-                    <XStack flex={1} />
-                    <Link href={'(drawer)/home/movie/1'} asChild>
-                      <Button>Touch</Button>
-                    </Link>
-                  </Card.Footer>
-                  <Card.Background>
-                    <Image
-                      resizeMode="cover"
-                      alignSelf="center"
-                      style={{ borderRadius: 10 }}
-                      source={{
-                        width: 300,
-                        height: 300,
-                        uri: movie.Poster,
-                      }}
-                    />
-                  </Card.Background>
-                </Card>
+                <MovieCard key={movie.imdbID} movie={movie} />
               ))}
             </>
           ) : null}
