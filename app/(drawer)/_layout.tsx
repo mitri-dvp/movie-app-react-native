@@ -1,17 +1,22 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import Drawer from 'expo-router/drawer';
-import { colorTokens } from '@tamagui/themes';
+import { themes } from '@tamagui/themes';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from 'tamagui';
 
 const Layout = () => {
+  const theme = useTheme();
+
   return (
     <Drawer
       screenOptions={{
         headerShown: false,
         drawerHideStatusBarOnOpen: true,
-        drawerActiveBackgroundColor: colorTokens.dark.blue.blue7,
-        drawerActiveTintColor: 'white',
+        drawerActiveBackgroundColor: theme.color8.val,
+        drawerActiveTintColor: theme.color.val,
+        drawerInactiveTintColor: theme.color1.val,
+        drawerInactiveBackgroundColor: theme.color12.val,
         drawerLabelStyle: { marginLeft: -20 },
       }}>
       <Drawer.Screen
