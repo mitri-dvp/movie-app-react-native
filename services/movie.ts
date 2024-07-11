@@ -8,12 +8,14 @@ export const getMovies = async (): Promise<Movie[]> => {
   return result;
 };
 
-export const getSearchResults = async (query: string): Promise<Movie> => {
+export const getSearchResults = async (query: string): Promise<MovieSearchResult[]> => {
   const response = await fetch(
     `https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(query)}`
   );
 
-  return await response.json();
+  const data = await response.json();
+  console.log({ data });
+  return data.Search || [];
 };
 
 export const getMovieDetails = async (id: string): Promise<any> => {

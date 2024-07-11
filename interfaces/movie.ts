@@ -30,3 +30,11 @@ interface Rating {
   Source: string;
   Value: string;
 }
+
+interface MovieSearchResult {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
